@@ -29,7 +29,12 @@
         </li>
           <li class="nav-item">
             
-            <a href="<?=base_url()?>Ppdb"><button type="button" class="btn btn-primary">PPDB</button>
+            <?php if($this->session->userdata('email')){?>
+              <a href="<?=base_url()?>Auth/logout"><button type="button" class="btn btn-primary">Logout</button></a>
+              <?php }else{ ?>
+                <a href="<?=base_url()?>Ppdb"><button type="button" class="btn btn-primary">PPDB</button></a>
+                <a href="<?=base_url()?>Auth"><button type="button" class="btn btn-primary">Login</button></a>
+                <?php } ?> 
           </li>
         </ul>
       </div>
